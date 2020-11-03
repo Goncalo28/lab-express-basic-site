@@ -5,13 +5,8 @@ const app = express();
 
 app.use(express.static('public'));
 
-//direct user to the /home page
-app.get('/', (request, response) => {
-    response.send('<a href="/home">Click to get to the Home Page</a>')
-})
-
 //home page
-app.get('/home', (request, response) => {
+app.get('/', (request, response) => {
     response.sendFile(__dirname + '/views/home.html');
 });
 
